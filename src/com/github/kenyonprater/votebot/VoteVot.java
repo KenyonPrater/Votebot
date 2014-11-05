@@ -24,10 +24,6 @@ public class Vote
     		{
     			votetotals[i] = 0;
     		}
-    		for(int i = 0; i < votetotals.length; i++)
-    		{
-    			System.out.println(votetotals[i]);
-    		}
     		this.parent = parentbot;
     		parent.sendMessage(parent.channel, "Vote: " + this.name + " has started! Type '@votebot vote [your vote]' to vote! Options are:");
     		for(int i = 0; i < this.options.size(); i++)
@@ -55,7 +51,6 @@ public class Vote
     	
     	public void addVote(String user, String choice)
     	{
-    		System.out.println("yep");
     		if(options.contains(choice))
     		{
     			votetotals[options.indexOf(choice)]++;
@@ -82,11 +77,6 @@ public class Vote
     	
     	public void endVote()
     	{
-    		System.out.println("asdaf");
-    		for(int i = 0; i < this.votetotals.length; i++)
-    		{
-    			System.out.println(i + " " + this.votetotals[i]);
-    		}
     		parent.sendMessage(parent.channel, "The vote: " + this.name + " has ended! Results:");
     		int winner = -1;
     		int maxvotes = -1;
